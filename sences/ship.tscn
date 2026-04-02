@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://5qomk27f36pr"]
+
+[ext_resource type="Script" uid="uid://cyd3yivuwyljo" path="res://gdspring/ship_Main.gd" id="1_7ugee"]
+[ext_resource type="Texture2D" uid="uid://dy2qsmlngenvx" path="res://images/Ship.png" id="2_0aht7"]
+[ext_resource type="PackedScene" uid="uid://c1m5rbppa7fty" path="res://sences/main_turret_test.tscn" id="3_0aht7"]
+
+[node name="Ship" type="Node2D" unique_id=1032443150]
+script = ExtResource("1_7ugee")
+
+[node name="Ship_Display" type="Sprite2D" parent="." unique_id=549560721]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0aht7")
+
+[node name="Main_Turret_Test" parent="." unique_id=1443485668 instance=ExtResource("3_0aht7")]
+position = Vector2(-21, 1)

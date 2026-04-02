@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c1m5rbppa7fty"]
+
+[ext_resource type="Script" uid="uid://bwptrq01oo01t" path="res://gdspring/MainTurret.gd" id="1_oeu11"]
+[ext_resource type="Texture2D" uid="uid://ch8edgcxlblt5" path="res://images/turret.png" id="2_k7y8r"]
+
+[node name="Main_Turret_Test" type="Node2D" unique_id=1443485668]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("1_oeu11")
+
+[node name="Turret_Display" type="Sprite2D" parent="." unique_id=1704520992]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_k7y8r")
