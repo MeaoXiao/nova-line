@@ -1,8 +1,29 @@
 [gd_scene format=3 uid="uid://b4p816u7uyfg1"]
 
+[ext_resource type="Texture2D" uid="uid://crgklge1tpyga" path="res://images/space_background.png" id="1_ogof8"]
 [ext_resource type="PackedScene" uid="uid://5qomk27f36pr" path="res://sences/ship.tscn" id="1_vcl7c"]
+[ext_resource type="Texture2D" uid="uid://bfrdglhq4fpog" path="res://images/space_star.png" id="2_ak3i0"]
+[ext_resource type="Texture2D" uid="uid://bx1pb1kys25ql" path="res://images/spcae_star_up.png" id="2_h5jnx"]
 
 [node name="World" type="Node2D" unique_id=1283618216]
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1685664914]
+scroll_scale = Vector2(0.1, 0.1)
+
+[node name="space_background" type="Sprite2D" parent="Parallax2D" unique_id=1489031199]
+texture = ExtResource("1_ogof8")
+
+[node name="bg_space_star" type="Parallax2D" parent="." unique_id=1840725458]
+scroll_scale = Vector2(0.3, 0.3)
+
+[node name="space_star" type="Sprite2D" parent="bg_space_star" unique_id=1269930463]
+texture = ExtResource("2_ak3i0")
+
+[node name="bg_space_star2" type="Parallax2D" parent="." unique_id=603452311]
+scroll_scale = Vector2(0.7, 0.7)
+
+[node name="space_star2" type="Sprite2D" parent="bg_space_star2" unique_id=707517132]
+texture = ExtResource("2_h5jnx")
 
 [node name="Ship" parent="." unique_id=1032443150 instance=ExtResource("1_vcl7c")]
 position = Vector2(371, 198)

@@ -1,24 +1,36 @@
 extends Node2D
 
-@export var move_speed: float = 300.0  # 移动速度（像素/秒）
+@export var acceleration: float = 1000.0    # 加速度
+@export var max_speed: float = 60000.0       # 最大速度
+@export var rotation_speed: float = 3.0    # 旋转速度（弧度/秒）
+@export var friction: float = 0.98         # 摩擦力（0-1，越小停得越快）awwww
+
+var velocity: Vector2 = Vector2.ZERO       # 当前速度
 
 func _process(delta: float) -> void:
-	# 获取输入方向
-	var direction = Vector2.ZERO
+	# AD 控制旋转
+	if Input.is_key_pressed(KEY_A):
+		rotation -= rotation_speed * delta
+	if Input.is_key_pressed(KEY_D):
+		rotation += rotation_speed * delta
 	
-	# WASD 控制
-	if Input.is_action_pressed("ui_up") or Input.is_key_pressed(KEY_W):
-		direction.y -= 1
-	if Input.is_action_pressed("ui_down") or Input.is_key_pressed(KEY_S):
-		direction.y += 1
-	if Input.is_action_pressed("ui_left") or Input.is_key_pressed(KEY_A):
-		direction.x -= 1
-	if Input.is_action_pressed("ui_right") or Input.is_key_pressed(KEY_D):
-		direction.x += 1
+	# WS 控制加减速（沿飞船朝向）
+	if Input.is_key_pressed(KEY_W):
+		# 沿当前朝向加速
+		var forward = Vector2.RIGHT.rotated(rotation)
+		velocity += forward * acceleration * delta
 	
-	# 归一化方向向量（防止斜向移动速度过快）
-	if direction != Vector2.ZERO:
-		direction = direction.normalized()
+	if Input.is_key_pressed(KEY_S):
+		# 减速/倒车
+		var forward = Vector2.RIGHT.rotated(rotation)
+		velocity -= forward * acceleration * delta * 0.5  # 倒车速度减半
 	
-	# 应用移动
-	position += direction * move_speed * delta
+	# 应用摩擦力（模拟太空阻力）
+	velocity *= friction
+	
+	# 限制最大速度
+	if velocity.length() > max_speed:
+		velocity = velocity.normalized() * max_speed
+	
+	# 应用速度
+	position += velocity * delta

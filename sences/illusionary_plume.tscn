@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://dy576bbuiuai1"]
+
+[ext_resource type="Script" uid="uid://bueogap4ajo3n" path="res://sences/illusionary_plume_test.gd" id="1_6rev5"]
+[ext_resource type="Texture2D" uid="uid://dwdse5lh7jq7i" path="res://images/illusionary_plume/illusionary_plume_armorplate_front.png" id="1_pulyh"]
+[ext_resource type="Texture2D" uid="uid://bacx3gcn2hwnn" path="res://images/illusionary_plume/illusionary_plume_armorplate_rear.png" id="2_6rev5"]
+[ext_resource type="Texture2D" uid="uid://br5efp2jjmv2h" path="res://images/illusionary_plume/illusionary_plume_boosttrack.png" id="3_uakap"]
+[ext_resource type="Texture2D" uid="uid://yw6s1ue3c8ua" path="res://images/illusionary_plume/illusionary_plume_core.png" id="4_t8gkl"]
+[ext_resource type="Texture2D" uid="uid://c8yoe7s7itpi5" path="res://images/illusionary_plume/illusionary_plume_downrail.png" id="5_5gutt"]
+[ext_resource type="Texture2D" uid="uid://bg5h04ipwc401" path="res://images/illusionary_plume/illusionary_plume_energypart_down.png" id="6_4uhdm"]
+[ext_resource type="Texture2D" uid="uid://cttgsdu5v2xk8" path="res://images/illusionary_plume/illusionary_plume_energypart_rearside.png" id="7_71dd6"]
+[ext_resource type="Texture2D" uid="uid://ndbdg5f7mf65" path="res://images/illusionary_plume/illusionary_plume_energypart_up.png" id="8_8g1cp"]
+[ext_resource type="Texture2D" uid="uid://cmy8uksklkvb" path="res://images/illusionary_plume/illusionary_plume_movablepanel_down.png" id="9_15j2y"]
+[ext_resource type="Texture2D" uid="uid://fuskjn4unu8q" path="res://images/illusionary_plume/illusionary_plume_movablepanel_up.png" id="10_4jfb3"]
+[ext_resource type="Texture2D" uid="uid://bn7h77ipa163u" path="res://images/illusionary_plume/illusionary_plume_specialeffect1.png" id="11_6qif4"]
+[ext_resource type="Texture2D" uid="uid://dljmxvqs0iemo" path="res://images/illusionary_plume/illusionary_plume_specialeffect2.png" id="12_i5hwy"]
+[ext_resource type="Texture2D" uid="uid://dxfsye66b61he" path="res://images/illusionary_plume/illusionary_plume_specialeffect3.png" id="13_xguff"]
+[ext_resource type="Script" uid="uid://dmm8ebigebbni" path="res://gdspring/illusionary_plume/illusionary_plume_specialeffect_3_test.gd" id="14_c43cy"]
+[ext_resource type="Texture2D" uid="uid://be4okai4i7kti" path="res://images/illusionary_plume/illusionary_plume_specialeffect4.png" id="15_54ah5"]
+[ext_resource type="Script" uid="uid://e0vwxj3cmvri" path="res://sences/illusionary_plume_specialeffect_6.gd" id="15_uakap"]
+[ext_resource type="Texture2D" uid="uid://d3r5q7o83rncm" path="res://images/illusionary_plume/illusionary_plume_specialeffect5.png" id="16_24sru"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccddo"]
+
+[node name="Illusionary_Plume" type="Node2D" unique_id=152504919]
+script = ExtResource("1_6rev5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=138026657]
+sprite_frames = SubResource("SpriteFrames_ccddo")
+
+[node name="IllusionaryPlumeDownrail" type="Sprite2D" parent="." unique_id=1636069113]
+texture = ExtResource("5_5gutt")
+
+[node name="IllusionaryPlumeBoosttrack" type="Sprite2D" parent="." unique_id=941746407]
+texture = ExtResource("3_uakap")
+
+[node name="IllusionaryPlumeMovablepanelDown" type="Sprite2D" parent="." unique_id=445321587]
+texture = ExtResource("9_15j2y")
+
+[node name="IllusionaryPlumeMovablepanelUp" type="Sprite2D" parent="." unique_id=745540938]
+texture = ExtResource("10_4jfb3")
+
+[node name="IllusionaryPlumeCore" type="Sprite2D" parent="." unique_id=415387151]
+texture = ExtResource("4_t8gkl")
+
+[node name="IllusionaryPlumeEnergypartDown" type="Sprite2D" parent="." unique_id=1129100700]
+texture = ExtResource("6_4uhdm")
+
+[node name="IllusionaryPlumeEnergypartRearside" type="Sprite2D" parent="." unique_id=416988144]
+texture = ExtResource("7_71dd6")
+
+[node name="IllusionaryPlumeEnergypartUp" type="Sprite2D" parent="." unique_id=1794541967]
+texture = ExtResource("8_8g1cp")
+
+[node name="IllusionaryPlumeArmorplateFront" type="Sprite2D" parent="." unique_id=1002907046]
+texture = ExtResource("1_pulyh")
+
+[node name="IllusionaryPlumeArmorplateRear" type="Sprite2D" parent="." unique_id=749265583]
+texture = ExtResource("2_6rev5")
+
+[node name="IllusionaryPlumeSpecialeffect1" type="Sprite2D" parent="." unique_id=1040966446]
+texture = ExtResource("11_6qif4")
+
+[node name="IllusionaryPlumeSpecialeffect2" type="Sprite2D" parent="." unique_id=766538045]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_i5hwy")
+
+[node name="IllusionaryPlumeSpecialeffect6" type="Sprite2D" parent="." unique_id=295230302]
+rotation = 0.7853982
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_xguff")
+script = ExtResource("15_uakap")
+
+[node name="IllusionaryPlumeSpecialeffect3" type="Sprite2D" parent="." unique_id=802213949]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_xguff")
+script = ExtResource("14_c43cy")
+
+[node name="IllusionaryPlumeSpecialeffect4" type="Sprite2D" parent="." unique_id=1248368218]
+texture = ExtResource("15_54ah5")
+
+[node name="IllusionaryPlumeSpecialeffect5" type="Sprite2D" parent="." unique_id=1308133847]
+texture = ExtResource("16_24sru")

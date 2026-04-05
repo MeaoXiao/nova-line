@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c30e13ww8bt6u"]
+
+[ext_resource type="Texture2D" uid="uid://biltgfvnj8fvg" path="res://images/Small_Plasma_Projectile.png" id="1_can4m"]
+[ext_resource type="Script" uid="uid://doiu857lf2tl3" path="res://gdspring/small_plasma_projectile.gd" id="1_script"]
+
+[node name="small_plasma_projectile" type="Node2D" unique_id=642266468]
+script = ExtResource("1_script")
+
+[node name="display" type="Sprite2D" parent="." unique_id=853748728]
+texture = ExtResource("1_can4m")
